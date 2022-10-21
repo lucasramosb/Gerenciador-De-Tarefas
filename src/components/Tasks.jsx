@@ -5,23 +5,23 @@ import './Tasks.scss'
 
 import TaskItem from './TaskItem'
 
-//Renderização do container onde esta todas as tarefas
+//Renderização do container onde esta todas as tarefas - container tarefas
 const Tasks = () => {
   //constante onde fica as tarefas 
   const [tasks, setTasks] = useState([
-    // {
-    //     id: "1",
-    //     description: "tarefa1",
-    //     isCompleted: false
-    // },
-    // {
-    //     id: "2",
-    //     description: "tarefa2",
-    //     isCompleted: true
-    // }
+    {
+        id: "1",
+        description: "tarefa1",
+        isCompleted: false
+    },
+    {
+        id: "2",
+        description: "tarefa2",
+        isCompleted: true
+    }
   ]);
 
-  //constante assincrona onde faz requisição das tarefas para o banco de dados
+  //constante assincrona onde faz requisição das tarefas do banco de dados
   const fetchTasks = async () => {
     try {
       const { data } = await axios.get(
@@ -35,9 +35,9 @@ const Tasks = () => {
   };
 
   //Carrega as tarefas assim que o componente for renderizado
-  useEffect(() => {
-    fetchTasks();
-  }, []);
+  // useEffect(() => {
+  //   fetchTasks();
+  // }, []);
 
   //renderização de: Minhas tarefas, ultimas tarefas e terefas concluidas
   return (
