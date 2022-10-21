@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+
 import './Tasks.scss'
+
+import TaskItem from './TaskItem'
 
 //Renderização do container onde esta todas as tarefas
 const Tasks = () => {
@@ -44,14 +47,14 @@ const Tasks = () => {
       <div className="last-tasks">
         <h3>Últimas Tarefas</h3>
         <div className="task-list">
-            {tasks.filter(task => task.isCompleted === false).map(lastTask => <p>{lastTask.description}</p>)}
+            {tasks.filter(task => task.isCompleted === false).map(lastTask => <TaskItem task={lastTask}/>)}
         </div>
       </div>
 
       <div className="completed-tasks">
         <h3>Tarefas Concluídas</h3>
         <div className="task-list">
-            {tasks.filter(task => task.isCompleted === true).map(completedtask => <p>{completedtask.description}</p>)}
+            {tasks.filter(task => task.isCompleted === true).map(completedTask => <TaskItem task={completedTask}/>)}
         </div>
       </div>
     </div>
