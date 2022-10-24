@@ -16,7 +16,7 @@ const TaskItem = ({task}) => {
             </div>
             
             <div className="delete">
-                <AiFillDelete size={18} color="#F97474"/> 
+                <AiFillDelete size={18} color="#F97474"/>  
             </div>
 
         </div>
