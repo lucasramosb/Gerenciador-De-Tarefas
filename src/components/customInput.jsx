@@ -1,11 +1,15 @@
-const customInput = (label, Value) => {
+import './CustomInput.scss'
+
+//Component do input de adicionar tarefa
+const CustomInput = ({label, Value, onChange}) => {
     return (
-        <div className="custom-input-container">
-            <input type="text" className="custom input" />
+        //div com classe custon-input-container
+        <div className="custom-input-container">    
+            <input type="text" className="custom-input" onChange={(e) => onChange(e)} />
 
             { label ? (
-                <label className={`${Value.length ? "shrink" : ""} custom-input-label`}>
-
+                <label className={`${Value ? "shrink" : ""} custom-input-label`}>
+                    {label}
                 </label>
             ) : null}
 
@@ -13,4 +17,4 @@ const customInput = (label, Value) => {
     )
 };
  
-export default customInput;
+export default CustomInput;
