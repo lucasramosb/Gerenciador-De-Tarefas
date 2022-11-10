@@ -3,22 +3,24 @@ import axios from "axios";
 
 import './Tasks.scss'
 
-import TaskItem from './TaskItem'
+import TaskItem from './TaskItem';
+import AddTask from "./AddTask";
+// import customInput from "./customInput";
 
 //Renderização do container onde esta todas as tarefas - container tarefas
 const Tasks = () => {
   //constante onde fica as tarefas 
   const [tasks, setTasks] = useState([
-    {
-        id: "1",
-        description: "tarefa1",
-        isCompleted: false
-    },
-    {
-        id: "2",
-        description: "tarefa2",
-        isCompleted: true
-    }
+    // {
+    //     id: "1",
+    //     description: "tarefa1",
+    //     isCompleted: false
+    // },
+    // {
+    //     id: "2",
+    //     description: "tarefa2",
+    //     isCompleted: true
+    // }
   ]);
 
   //constante assincrona onde faz requisição das tarefas do banco de dados
@@ -35,9 +37,9 @@ const Tasks = () => {
   };
 
   //Carrega as tarefas assim que o componente for renderizado
-  // useEffect(() => {
-  //   fetchTasks();
-  // }, []);
+  useEffect(() => {
+    fetchTasks();
+  }, []);
 
   //renderização de: Minhas tarefas, ultimas tarefas e terefas concluidas
   return (
@@ -46,6 +48,7 @@ const Tasks = () => {
 
       <div className="last-tasks">
         <h3>Últimas Tarefas</h3>
+          <AddTask/>  
         <div className="task-list">
             {tasks.filter(task => task.isCompleted === false).map(lastTask => <TaskItem task={lastTask}/>)}
         </div>
