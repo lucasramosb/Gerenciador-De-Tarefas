@@ -1,14 +1,14 @@
 import './CustomInput.scss'
 
 //Component do input de adicionar tarefa
-const CustomInput = ({label, Value, onChange}) => {
+const CustomInput = ({label, value, onChange}) => {
     return (
         //div com classe custon-input-container
         <div className="custom-input-container">    
-            <input type="text" className="custom-input" value={Value} onChange={(e) => onChange(e)} />
+            <input type="text" className="custom-input" value={value} onChange={(e) => onChange(e)} />
 
             { label ? (
-                <label className={`${Value ? "shrink" : ""} custom-input-label`}>
+                <label className={`${value ? "shrink" : ""} custom-input-label`}>
                     {label}
                 </label>
             ) : null}
