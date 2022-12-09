@@ -7,7 +7,7 @@ const TaskItem = ({task}) => {
     return (
         <div className="task-item-container">
             <div className="task-description">
-                {/* se a tarefa estiver completa(yask.isCompleted) usar a classe... */}
+                {/* se a tarefa estiver completa(task.isCompleted) usar a classe... */}
                 <label className={task.isCompleted ? 'checkbox-container-completed' : 'checkbox-container'}> 
                     {task.description}
                     <input type="checkbox" defaultChecked={task.isCompleted} />
