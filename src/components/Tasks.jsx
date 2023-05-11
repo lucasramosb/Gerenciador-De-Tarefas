@@ -41,7 +41,7 @@ const Tasks = () => {
     fetchTasks();
   }, []);
 
-  //renderização de: Minhas tarefas, ultimas tarefas e terefas concluidas
+  //renderização - Minhas tarefas | ultimas tarefas | terefas concluidas
   return (
     <div className="tasks-container">
       <h2>Minhas Tarefas</h2>

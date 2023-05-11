@@ -1,13 +1,27 @@
 import './TaskItem.scss'
+import axios from 'axios'
+import { useAlert } from 'react-alert'
 
 import {AiFillDelete} from 'react-icons/ai'
 
+
 //renderização do item da tarefa
 const TaskItem = ({task}) => {
+
+    const alert = useAlert();
+
+    const handleTaskDeletion = async () =>{
+        try {
+            await axios.delete(`https://fsc-task-manager-backend.herokuapp.com/tasks/${task._id}`);
+        } catch (error) {
+            alert.error("Algo deu errado")
+        }
+    }
+
     return (
         <div className="task-item-container">
             <div className="task-description">
-                {/* se a tarefa estiver completa(yask.isCompleted) usar a classe... */}
+                {/* se a tarefa estiver completa(task.isCompleted) usar a classe... */}
                 <label className={task.isCompleted ? 'checkbox-container-completed' : 'checkbox-container'}> 
                     {task.description}
                     <input type="checkbox" defaultChecked={task.isCompleted} />
@@ -16,7 +30,7 @@ const TaskItem = ({task}) => {
             </div>
             
             <div className="delete">
-                <AiFillDelete size={18} color="#F97474"/>  
+                <AiFillDelete size={18} color="#F97474" onClick={handleTaskDeletion}/>  
             </div>
 
         </div>
