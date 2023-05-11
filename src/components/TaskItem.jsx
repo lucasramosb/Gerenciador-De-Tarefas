@@ -6,13 +6,17 @@ import {AiFillDelete} from 'react-icons/ai'
 
 
 //renderização do item da tarefa
-const TaskItem = ({task}) => {
+const TaskItem = ({task, fetchTasks}) => {
 
     const alert = useAlert();
 
     const handleTaskDeletion = async () =>{
         try {
             await axios.delete(`https://fsc-task-manager-backend.herokuapp.com/tasks/${task._id}`);
+
+            await fetchTasks();
+            
+            alert.success("Tarefa removida com sucesso");
         } catch (error) {
             alert.error("Algo deu errado")
         }
