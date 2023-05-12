@@ -1,3 +1,6 @@
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+
 import Tasks from "./components/Tasks";
 import SideBar from "./components/SideBar";
 import './App.scss';
@@ -5,13 +8,11 @@ import './App.scss';
 
 //renderização de toda pag
 const App = () => {
-
+  
   return (
-    //renderização do componente Tasks
-    <div className="app-container">
-      <SideBar/>
-      <Tasks/> 
-    </div>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+      </Routes>
   );
 };
 

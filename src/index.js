@@ -5,6 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { transitions, positions, Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
+import { BrowserRouter } from "react-router-dom";
 
 //alterações que fazem parte da biblioteca react-alert
 
@@ -21,9 +22,11 @@ const options = {
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <AlertProvider template={AlertTemplate} {...options} transition={transitions.SCALE}>
-      <App />
-    </AlertProvider>
+    <BrowserRouter>
+      <AlertProvider template={AlertTemplate} {...options} transition={transitions.SCALE}>
+        <App />
+      </AlertProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
