@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import axios from "axios";
 import { useAlert } from "react-alert";
 
@@ -16,7 +16,7 @@ const Tasks = () => {
   const alert = useAlert;
 
   //constante assincrona onde faz requisição das tarefas do banco de dados
-  const fetchTasks = async () => {
+  const fetchTasks = useCallback(async() => {
     try {
       const { data } = await axios.get(
         "https://fsc-task-manager-backend.herokuapp.com/tasks"
@@ -25,7 +25,7 @@ const Tasks = () => {
     } catch (error) {
       alert.error("Não foi possivel recuperar as terefas.")
     }
-  };
+  }, [alert]);
 
   const lastTasks = useMemo (() => {
     return tasks.filter( task => task.isCompleted === false)
@@ -38,7 +38,7 @@ const Tasks = () => {
   //Carrega as tarefas assim que o componente for renderizado
   useEffect(() => {
     fetchTasks();
-  }, );
+  }, [fetchTasks]);
 
   //renderização - Minhas tarefas | ultimas tarefas | terefas concluidas
   return (

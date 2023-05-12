@@ -2,8 +2,8 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 
-import Tasks from "./components/Tasks";
-import SideBar from "./components/SideBar";
+// import Tasks from "./components/Tasks";
+// import SideBar from "./components/SideBar";
 import './App.scss';
 // import TaskItem from "./components/TaskItem";
 
