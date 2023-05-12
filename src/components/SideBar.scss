@@ -2,7 +2,7 @@
     max-width: 181px;
     height: 100vh;
     background: #111;
-    padding: 56px 28px;
+    padding: 0px 56px 0px 56px;
     position: relative;
 
     @media (max-width: 768px) {
@@ -15,9 +15,14 @@
 
     .sign-out {
         position: absolute;
-        bottom: 0;
+        bottom: 10px;
         left: 0;
         width: 100%;
         color: black;
     }
+}
+
+img{
+    width: 120px;
+    padding-top: 56px;
 }
