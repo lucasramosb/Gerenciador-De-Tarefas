@@ -1,4 +1,4 @@
-import './CustomInput.scss'
+import './CustomInput.scss';
 
 //Component do input de adicionar tarefa
 const CustomInput = ({label, value, onChange, onEnterPress}) => {
