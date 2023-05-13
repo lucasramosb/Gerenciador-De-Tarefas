@@ -15,3 +15,9 @@
     width: 400px;
     padding: 30px;
 }
+
+@media (max-width: 768px) {
+    .img-logo{
+        width: 300px;
+    }
+}
