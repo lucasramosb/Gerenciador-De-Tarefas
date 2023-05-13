@@ -7,7 +7,7 @@ const SideBar = () => {
     const navigate = useNavigate();
 
     const handleSingOutClick = () => {
-        navigate('/login');
+        navigate('/');
     };
 
     return(

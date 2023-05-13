@@ -8,7 +8,7 @@ const Login = () =>{
     const navigate = useNavigate();
 
     const handleSignInClick = () => {
-        navigate('/')
+        navigate('/login')
     }
 
     return (
