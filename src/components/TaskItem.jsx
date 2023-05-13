@@ -12,7 +12,7 @@ const TaskItem = ({task, fetchTasks}) => {
 
     const handleTaskDeletion = async () =>{
         try {
-            await axios.delete(`https://fsc-task-manager-backend.herokuapp.com/tasks/${task._id}`);
+            await axios.delete(`${process.env.REACT_APP_API_URL}/tasks/${task._id}`);
             await fetchTasks();
             alert.success("Tarefa removida com sucesso");
         } catch (error) {
@@ -22,7 +22,7 @@ const TaskItem = ({task, fetchTasks}) => {
 
     const handleTaskCompletionChange = async (e) =>{
         try {
-            await axios.patch(`https://fsc-task-manager-backend.herokuapp.com/tasks/${task._id}`, {
+            await axios.patch(`${process.env.REACT_APP_API_URL}/tasks/${task._id}`, {
                 isCompleted: e.target.checked
             });
 

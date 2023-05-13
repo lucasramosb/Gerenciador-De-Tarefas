@@ -19,8 +19,8 @@ const Tasks = () => {
   const fetchTasks = useCallback(async() => {
     try {
       const { data } = await axios.get(
-        "https://fsc-task-manager-backend.herokuapp.com/tasks"
-      );
+        `${process.env.REACT_APP_API_URL}/tasks`
+        );
       setTasks(data);
     } catch (error) {
       alert.error("Não foi possivel recuperar as terefas.")
