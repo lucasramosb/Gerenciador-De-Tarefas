@@ -28,7 +28,7 @@ const AddTask = ({fetchTasks}) => {
           )
         };
 
-        await axios.post(`${process.env.REACT_APP_API_URL}/tasks`, {
+        await axios.post('http:///fsc-task-manager-backend.herokuapp.com/tasks', {
           description: task,
           isCompleted: false
         });
