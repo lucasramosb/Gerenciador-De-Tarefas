@@ -18,9 +18,7 @@ const Tasks = () => {
   //constante assincrona onde faz requisição das tarefas do banco de dados
   const fetchTasks = useCallback(async() => {
     try {
-      const { data } = await axios.get(
-        "https://fsc-task-manager-backend.herokuapp.com/tasks"
-        );
+      const { data } = await axios.get("https://fsc-task-manager-backend.herokuapp.com/tasks");
       setTasks(data);
     } catch (error) {
       alert.error("Não foi possivel recuperar as terefas.")
